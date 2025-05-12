@@ -11,4 +11,3 @@ MIT License
 
 ## Contact
 For questions, reach out at nicholasbrowningdev@gmail.com.
-```

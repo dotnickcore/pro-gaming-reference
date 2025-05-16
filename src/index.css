@@ -1,1 +1,11 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+@theme {
+  --retro-cyan: #00ffff;
+  --retro-magenta: #ff00ff;
+  --retro-purple: #9d00ff;
+  --retro-dark: #0f0f1a;
+  --retro-gray: #1a1a2e;
+  --retro-yellow: #ffcc00;
+  --retro-pink: #ff2d70;
+}

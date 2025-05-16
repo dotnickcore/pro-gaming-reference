@@ -8,6 +8,7 @@ import GenresDetails from "./pages/Genres/GenreDetails"
 import PlatformsDetails from "./pages/Platforms/PlatformDetails"
 import NotFound from "./pages/Errors/NotFound"
 import GameDetails from "./pages/Games/GameDetails"
+import ServerError from "./pages/Errors/ServerError"
 
 const queryClient = new QueryClient()
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/genres/:slug" element={<GenresDetails />}/>
         </Route>
         <Route path="/404" element={<NotFound />} />
+        <Route path="/500" element={<ServerError />} />
         <Route path="*" element={<Navigate to="/404" replace />} />
       </Routes>
     </QueryClientProvider>

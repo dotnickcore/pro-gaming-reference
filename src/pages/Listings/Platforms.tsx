@@ -1,4 +1,3 @@
-import React from 'react'
 import PlatformCard from '../../components/Card/PlatformCard';
 import { mockPlatforms } from '../../utils/mockPlatforms';
 

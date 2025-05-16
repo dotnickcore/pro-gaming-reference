@@ -8,7 +8,7 @@ function SideBar() {
           MENU
         </h2>
         <nav className="space-y-1 md:space-y-2">
-          {['DASHBOARD', 'GAMES', 'LEADERBOARDS', 'FORUMS'].map((item) => (
+          {['BROWSE ALL GAMES', 'BROWSE ALL PLATFORMS', 'BROWSE ALL GENRES', 'BROSWE ALL DEVELOPERS', 'BROWSER ALL PUBLISHERS'].map((item) => (
             <Link
               key={item}
               to={`/${item.toLowerCase()}`}

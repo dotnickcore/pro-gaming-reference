@@ -9,3 +9,7 @@
   --retro-yellow: #ffcc00;
   --retro-pink: #ff2d70;
 }
+
+#mobile-sidebar {
+  transition: transform 0.3s ease-in-out;
+}

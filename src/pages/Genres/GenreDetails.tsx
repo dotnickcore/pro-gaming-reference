@@ -1,9 +1,6 @@
-import React from 'react'
-
-function GenresDetails() {
+export default function GenreDetailsPage() {
   return (
-    <div>GenresDetails</div>
+    <>
+    </>
   )
 }
-
-export default GenresDetails

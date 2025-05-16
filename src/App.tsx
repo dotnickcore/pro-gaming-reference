@@ -7,6 +7,7 @@ import Genres from "./pages/Listings/Genres"
 import GenresDetails from "./pages/Genres/GenreDetails"
 import PlatformsDetails from "./pages/Platforms/PlatformDetails"
 import NotFound from "./pages/Errors/NotFound"
+import GameDetails from "./pages/Games/GameDetails"
 
 const queryClient = new QueryClient()
 
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="/games/:slug" element={<GameDetails />}/>
           <Route path="/platforms" element={<Platforms />}/>
           <Route path="/platforms/:slug" element={<PlatformsDetails />}/>
           <Route path="/genres" element={<Genres />}/>

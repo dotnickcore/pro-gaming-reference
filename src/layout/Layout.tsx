@@ -5,29 +5,40 @@ import Logo from '../assets/pro-gaming-reference-full-logo-fixed.svg'
 
 function Layout() {
   return (
-    <div className="grid grid-areas-layout grid-cols-[250px_1fr] grid-rows-[60px_1fr] min-h-screen relative bg-retro-dark">
-      {/* Navbar with glowing effect */}
-      <div className="grid-in-navbar bg-retro-gray text-retro-cyan col-span-2 relative 
-                    border-b border-retro-purple/50 shadow-[0_0_15px_rgba(157,0,255,0.3)]">
-        <div className="absolute left-0 w-[250px] h-full flex items-center pl-4 border-r border-retro-purple">
+    <div className="flex flex-col md:grid md:grid-areas-layout md:grid-cols-[250px_1fr] md:grid-rows-[60px_1fr] min-h-screen relative bg-retro-dark">
+      {/* Mobile menu button (hidden on desktop) */}
+      <button className="md:hidden fixed top-4 right-4 z-50 text-retro-cyan p-2 bg-retro-gray/90 rounded-lg">
+        <svg width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+          <path d="M3 12h18M3 6h18M3 18h18" />
+        </svg>
+      </button>
+
+      {/* Navbar - Mobile first then desktop */}
+      <div className="md:grid-in-navbar bg-retro-gray text-retro-cyan md:col-span-2 relative border-b border-retro-purple/50">
+        <div className="hidden md:absolute md:left-0 md:w-[250px] md:h-full md:flex md:items-center md:pl-4 md:border-r md:border-retro-purple">
           <img 
             src={Logo} 
-            alt="Company Logo"
+            alt="Pro Gaming Reference Logo"
             className="h-8 drop-shadow-[0_0_8px_rgba(0,255,255,0.6)]" 
           />
         </div>
         <NavBar />
       </div>
 
-      {/* Sidebar with grid pattern */}
-      <div className="grid-in-sidebar bg-retro-gray/80 h-[calc(100vh-60px)] overflow-y-auto
-                     border-r border-retro-purple/30 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxNTcsIDAsIDI1NSwgMC4xKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')]">
+      {/* Sidebar - Hidden on mobile, visible on desktop */}
+      <div className="hidden md:grid-in-sidebar md:block bg-retro-gray/80 h-[calc(100vh-60px)] overflow-y-auto border-r border-retro-purple/30">
         <SideBar />
       </div>
 
-      {/* Main content with scanlines */}
-      <div className="grid-in-main bg-retro-dark p-5 overflow-y-auto
-                     bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJzY2FubGluZXMiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHdpZHRoPSIxMDAiIGhlaWdodD0iMiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMSIgZmlsbD0icmdiYSgwLCAyNTUsIDI1NSwgMC4wMykiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjc2NhbmxpbmVzKSIvPjwvc3ZnPg==')]">
+      {/* Mobile sidebar overlay (shown when menu button clicked) */}
+      <div className="fixed inset-0 z-40 bg-retro-dark/90 backdrop-blur-sm md:hidden" id="mobile-sidebar">
+        <div className="w-4/5 h-full bg-retro-gray/95 p-4 border-r border-retro-purple">
+          <SideBar />
+        </div>
+      </div>
+
+      {/* Main content */}
+      <div className="md:grid-in-main bg-retro-dark p-4 md:p-5 overflow-y-auto">
         <Outlet />
       </div>
     </div>
